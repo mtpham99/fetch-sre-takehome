@@ -26,7 +26,8 @@ dependencies = [
 dev = [
     "mypy",
     "pre-commit",
-    "pylint"
+    "pylint",
+    "pip-tools"
 ]
 
 [project.urls]

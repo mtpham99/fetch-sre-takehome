@@ -16,7 +16,7 @@ This script utilizes [aiohttp](https://docs.aiohttp.org/en/stable/index.html) to
 
 ### 2. Usage
 
-This script is written in python and was tested with python 3.9-3.12 on Linux (openSuse Tumebleweed). The instructions below should work on any Unix like OS. Windows users may need to tweak some of the commands below (e.g. virtual environment usage).
+This script is written in python and was tested with python 3.9-3.12 on Linux (openSuse Tumebleweed).
 
 ***Running this script requires python >= 3.9 and pip for installing dependencies***.
 
@@ -36,29 +36,54 @@ git clone https://github.com/mtpham99/fetch-sre-takehome.git
 cd fetch-sre-takehome
 ```
 
-Next, install the dependencies. Easiest way to install the dependencies is using [pip](https://pypi.org/project/pip/). It is also recommended to install into a virtual environment:
+Next, install the dependencies. Easiest way to install the dependencies is using [pip](https://pypi.org/project/pip/). It is also recommended to install into a virtual environment.
+
+
+First, create the virtual environment:
 
 ```
 # assuming python3 is >= 3.9
-python3 -m venv /path/to/virtual-environment  # create virtual environment
-source /path/to/virtual-environment/bin/activate  # activate virtual environment
-pip install . # install dependencies (aiohttp and pyyaml)
+python -m venv /path/to/virtual-environment
+```
+
+Next, activate the virtual environment. This step is platform/OS dependent:
+
+```
+# Unix-like (Linux/Mac)
+source /path/to/virtual-environment/bin/activate
+```
+
+```
+# Windows (CMD)
+.\path\to\virtual-environment\Scripts\activate.bat
+```
+
+```
+# Windows (Powershell)
+.\path\to\virtual-environment\Scripts\Activate.ps1
+```
+
+
+Finally, install the dependencies:
+
+```
+pip3 install -r requirements.txt
 ```
 
 #### 2.3 Running
 
 See "help":
 ```
-python3 http_endpoint_checkup.py --help
+python http_endpoint_checkup.py --help
 ```
 
 Run the sample inputs:
 ```
-python3 http_endpoint_checkup.py sample.yaml
+python http_endpoint_checkup.py sample.yaml
 ```
 
 Run your own input file:
 ```
-python3 http_endpoint_checkup.py /path/to/your/input/yaml/file
+python http_endpoint_checkup.py /path/to/your/input/yaml/file
 ```
 

@@ -34,17 +34,17 @@ def url_to_domain(url: str) -> str:
 def parse_input(configfile: str) -> list[HTTPEndpointData]:
     endpoints: list[HTTPEndpointData] = []
     with open(configfile, "r") as f:  # pylint: disable=unspecified-encoding
-        for ep in yaml.safe_load(f):
+        for entry in yaml.safe_load(f):
             endpoints.append(
                 HTTPEndpointData(
                     {
-                        "name": ep["name"],
-                        "url": ep["url"],
-                        "method": ep.get(
+                        "name": entry["name"],
+                        "url": entry["url"],
+                        "method": entry.get(
                             "method", "GET"  # defaults to "GET" method)
                         ),
-                        "headers": ep.get("headers", None),
-                        "body": ep.get("body", None),
+                        "headers": entry.get("headers", None),
+                        "body": entry.get("body", None),
                     }
                 )
             )

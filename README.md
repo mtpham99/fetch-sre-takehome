@@ -16,7 +16,8 @@ This script utilizes [aiohttp](https://docs.aiohttp.org/en/stable/index.html) to
 
 ### 2. Usage
 
-This script is written in python and was tested with python 3.9-3.12.
+This script is written in python and was tested with python 3.9-3.12 on Linux (openSuse Tumebleweed). The instructions below should work on any Unix like OS. Windows users may need to tweak some of the commands below (e.g. virtual environment usage).
+
 ***Running this script requires python >= 3.9 and pip for installing dependencies***.
 
 
@@ -40,7 +41,7 @@ Next, install the dependencies. Easiest way to install the dependencies is using
 ```
 # assuming python3 is >= 3.9
 python3 -m venv /path/to/virtual-environment  # create virtual environment
-source /path/to/virtual-environment  # activate virtual environment
+source /path/to/virtual-environment/bin/activate  # activate virtual environment
 pip install . # install dependencies (aiohttp and pyyaml)
 ```
 

@@ -1,0 +1,76 @@
+[project]
+name        = "fetch-sre-takehome"
+version     = "0.1.0"
+description = "Fetch site reliability engineering take-home exercise"
+
+authors = [
+  { name = "Matthew Pham", email = "pham.matthew@pm.me" },
+]
+
+readme = "README.md"
+license = {file = "LICENSE.md"}
+
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "aiohttp",
+    "pyyaml"
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pre-commit",
+    "pylint"
+]
+
+[project.urls]
+"Homepage"    = "https://github.com/mtpham99/fetch-sre-takehome"
+"Source"      = "https://github.com/mtpham99/fetch-sre-takehome"
+"Bug Tracker" = "https://github.com/mtpham99/fetch-sre-takehome/issues"
+
+[tool.black]
+line-length = 79
+include = ".pyi?$"
+exclude = """
+/(
+    .git
+    | .hg
+    | .mypy_cache
+    | .tox
+    | .venv
+    | _build
+    | buck-out
+    | build
+    | dist
+)/
+"""
+
+[tool.isort]
+line_length = 79
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+
+[tool.pylint]
+max-line-length = 79
+disable = [
+    "fixme",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-function-args",
+    "too-many-locals",
+    "unnecessary-pass"
+]
